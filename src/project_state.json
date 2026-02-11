@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build an official website for Guru Kirpa Mill Industries (nut & bolt manufacturer).",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Minimal industrial logo mark with a nut/bolt motif, monochrome + accent variant (gkmi-logo.dim_512x512.png)\n- Wide homepage hero image featuring nuts/bolts with an industrial workshop feel, high contrast, neutral tones (hero-fasteners.dim_1920x800.png)\n- Set of simple line icons for homepage highlights (quality, manufacturing, delivery), consistent stroke style (icons-fasteners-set.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-official-marketing-website-for-guru-kirpa-mill-industries-manufacturer-of-nuts-bolts-with-clear-navigation-and-seo-friendly-page-structure",
+      "title": "Create a responsive official marketing website for “Guru Kirpa Mill Industries” (manufacturer of nuts & bolts) with clear navigation and SEO-friendly page structure.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-core-pages-sections-home-about-products-nuts-bolts-categories-with-a-simple-catalog-style-layout-manufacturing-infrastructure-quality-standards-and-contact",
+      "title": "Implement core pages/sections: Home, About, Products (nuts/bolts categories with a simple catalog-style layout), Manufacturing/Infrastructure, Quality/Standards, and Contact.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-contact-inquiry-form-that-submits-inquiries-to-the-motoko-backend-for-storage-with-user-feedback-success-error-and-basic-validation-required-fields",
+      "title": "Add a contact/inquiry form that submits inquiries to the Motoko backend for storage, with user feedback (success/error) and basic validation (required fields).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-visual-theme-suitable-for-an-industrial-fasteners-manufacturer-steel-graphite-neutrals-with-a-single-accent-color-not-blue-purple-strong-typography-and-clean-section-based-layouts-use-tailwind-consistently-across-the-site",
+      "title": "Apply a cohesive visual theme suitable for an industrial fasteners manufacturer: steel/graphite neutrals with a single accent color (not blue/purple), strong typography, and clean section-based layouts; use Tailwind consistently across the site.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-brand-and-homepage-imagery-under-frontend-public-assets-generated-and-render-them-in-the-ui-logo-homepage-hero-section-visuals",
+      "title": "Add generated static brand and homepage imagery under frontend/public/assets/generated and render them in the UI (logo + homepage hero/section visuals).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Generate an official company website for Guru Kirpa Mill Industries (manufacturer of nuts & bolts).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Implement Motoko backend inquiry storage with stable persistence and APIs to create an inquiry and list inquiries (for future admin use).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Guru Kirpa Mill Industries",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

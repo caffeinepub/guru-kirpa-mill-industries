@@ -1,0 +1,135 @@
+{
+  "kind": "build_request",
+  "title": "Official website for Guru Kirpa Mill Industries (Nuts & Bolts Manufacturer)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a responsive official marketing website for “Guru Kirpa Mill Industries” (manufacturer of nuts & bolts) with clear navigation and SEO-friendly page structure.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "guru kirpa mill industries manufacturer of nut bolt generate a offical website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Site loads as a public-facing company website with consistent header/navigation and footer",
+        "All pages are responsive (mobile/tablet/desktop) and accessible (semantic headings, keyboard navigation)",
+        "All user-facing text is in English"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement core pages/sections: Home, About, Products (nuts/bolts categories with a simple catalog-style layout), Manufacturing/Infrastructure, Quality/Standards, and Contact.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "generate a offical website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation links to each page/section and route changes work without full page reload",
+        "Products page shows multiple product categories with short descriptions and placeholder/spec fields (e.g., material/grade/finish/size range)",
+        "Contact page shows company contact details (address/phone/email placeholders) and a contact form"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add a contact/inquiry form that submits inquiries to the Motoko backend for storage, with user feedback (success/error) and basic validation (required fields).",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "generate a offical website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Contact form includes: name, company (optional), email, phone (optional), message",
+        "Client-side validation prevents empty name/email/message and shows readable error messages",
+        "On submit, an inquiry record is persisted in the backend and the UI shows a success state"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement Motoko backend inquiry storage with stable persistence and APIs to create an inquiry and list inquiries (for future admin use).",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "generate a offical website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend exposes an update method to create an inquiry with timestamp",
+        "Backend stores inquiries in stable state so they survive canister upgrades",
+        "Backend exposes a query method to list stored inquiries (may return all or paginated)"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Apply a cohesive visual theme suitable for an industrial fasteners manufacturer: steel/graphite neutrals with a single accent color (not blue/purple), strong typography, and clean section-based layouts; use Tailwind consistently across the site.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "generate a offical website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A single, consistent theme (colors, typography, spacing, button styles) is used across all pages",
+        "Home page includes a hero section, key highlights (e.g., product range/quality/lead time placeholders), and a clear call-to-action leading to Contact",
+        "No blue/purple is used as the primary theme unless explicitly required by later user input"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add generated static brand and homepage imagery under frontend/public/assets/generated and render them in the UI (logo + homepage hero/section visuals).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "generate a offical website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images are committed under frontend/public/assets/generated",
+        "Header uses the generated logo asset",
+        "Home page uses the generated hero image and at least one additional generated visual element"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for all user-facing text",
+    "Backend must remain a single Motoko actor (no additional backend services)",
+    "Do not modify frontend paths designated as immutable by the platform (compose UI using existing components instead)",
+    "Do not use third-party auth providers; if authentication is ever needed, only Internet Identity is allowed (not required for this request)"
+  ],
+  "nonGoals": [
+    "E-commerce checkout, payments, or order management",
+    "Real-time chat or messaging features",
+    "Integration with external email/SMS sending services (store inquiries on-chain instead)",
+    "Customer login/portal"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Minimal industrial logo mark with a nut/bolt motif, monochrome + accent variant (gkmi-logo.dim_512x512.png)",
+      "Wide homepage hero image featuring nuts/bolts with an industrial workshop feel, high contrast, neutral tones (hero-fasteners.dim_1920x800.png)",
+      "Set of simple line icons for homepage highlights (quality, manufacturing, delivery), consistent stroke style (icons-fasteners-set.dim_512x512.png)"
+    ],
+    "edits": []
+  }
+}

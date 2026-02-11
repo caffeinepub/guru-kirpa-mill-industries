@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main application component that sets up TanStack Router with routes for all pages (Home, About, Products, Manufacturing, Quality, Contact) and wraps them in a Layout component.",
+  "frontend/src/components/Layout.tsx": "Layout wrapper component that provides consistent structure with SiteHeader, main content area with Outlet for route rendering, and SiteFooter.",
+  "frontend/src/components/SiteHeader.tsx": "Responsive header component with logo, company name, desktop/mobile navigation menu, and active route highlighting using TanStack Router.",
+  "frontend/src/components/SiteFooter.tsx": "Footer component with company information, quick links, contact details, social media icons, and attribution to caffeine.ai with UTM tracking.",
+  "frontend/src/pages/HomePage.tsx": "Homepage featuring hero section with CTA, key highlights (quality, product range, delivery), why choose us section with benefits, and final CTA section.",
+  "frontend/src/pages/AboutPage.tsx": "About page presenting company story, core values (quality, customer focus, innovation, reliability), and mission/vision statements in a structured layout.",
+  "frontend/src/pages/ProductsPage.tsx": "Products catalog page displaying 8 product categories (hex bolts, nuts, anchor bolts, etc.) with specifications (material, grade, finish, size range) and custom solutions CTA.",
+  "frontend/src/pages/ManufacturingPage.tsx": "Manufacturing page showcasing facility infrastructure, production capacity, CNC machines, quality control, 5-step manufacturing process, and technology/innovation capabilities.",
+  "frontend/src/pages/QualityPage.tsx": "Quality standards page detailing quality philosophy, certifications (ISO 9001, ISO 14001, ASTM, DIN), quality control process, testing equipment, and continuous improvement commitment.",
+  "frontend/src/pages/ContactPage.tsx": "Contact page with company contact information (address, phone, email, business hours) and integrated InquiryForm component for customer inquiries.",
+  "frontend/src/components/InquiryForm.tsx": "Contact form component with validation for name, email, and message fields; submits inquiries to backend and displays success/error states with loading indicators.",
+  "frontend/src/hooks/useSubmitInquiry.ts": "React Query mutation hook that submits inquiry data (email, subject, message) to the backend actor's submitInquiry method.",
+  "frontend/src/index.css": "Global styles with industrial-themed OKLCH color system featuring steel/graphite neutrals and amber accent color for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with industrial color palette, Inter font family, custom border radius, and animation settings.",
+  "frontend/index.html": "HTML entry point with SEO meta tags, page title, and Inter font preload from Google Fonts."
+}

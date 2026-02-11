@@ -1,0 +1,187 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Guru Kirpa Mill Industries — Responsive Marketing Website",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create a responsive public marketing site with consistent layout, navigation, accessibility, and SEO-friendly structure.",
+      "acceptanceCriteria": [
+        "Site loads as a public-facing company website with consistent header/navigation and footer",
+        "All pages are responsive (mobile/tablet/desktop) and accessible (semantic headings, keyboard navigation)",
+        "All user-facing text is in English"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the root app shell with a consistent header + footer layout, and set up client-side routing for the public marketing site (no auth required)."
+        },
+        {
+          "path": "frontend/src/components/SiteHeader.tsx",
+          "operation": "create",
+          "description": "Create an accessible, responsive header with primary navigation links for all core pages and a mobile-friendly menu behavior."
+        },
+        {
+          "path": "frontend/src/components/SiteFooter.tsx",
+          "operation": "create",
+          "description": "Create a consistent footer with company name, basic links, and placeholder contact details; ensure semantic markup and keyboard accessibility."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Add/adjust SEO basics (title consistency, meta description/keywords placeholders) and ensure HTML lang stays set to English (en)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement core pages: Home, About, Products catalog, Manufacturing/Infrastructure, Quality/Standards, and Contact with SPA navigation.",
+      "acceptanceCriteria": [
+        "Navigation links to each page/section and route changes work without full page reload",
+        "Products page shows multiple product categories with short descriptions and placeholder/spec fields (e.g., material/grade/finish/size range)",
+        "Contact page shows company contact details (address/phone/email placeholders) and a contact form"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create the Home page with section-based layout, semantic headings, and CTA linking to the Contact route."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "create",
+          "description": "Create the About page with company overview content placeholders in English and an accessible layout."
+        },
+        {
+          "path": "frontend/src/pages/ProductsPage.tsx",
+          "operation": "create",
+          "description": "Create the Products page showing nuts/bolts categories in a simple catalog-style layout with placeholder/spec fields (material/grade/finish/size range)."
+        },
+        {
+          "path": "frontend/src/pages/ManufacturingPage.tsx",
+          "operation": "create",
+          "description": "Create the Manufacturing/Infrastructure page with section blocks for machinery, capacity, and facilities (placeholders), keeping content in English."
+        },
+        {
+          "path": "frontend/src/pages/QualityPage.tsx",
+          "operation": "create",
+          "description": "Create the Quality/Standards page with placeholders for certifications, inspection, tolerances, and QA process; use semantic headings."
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "create",
+          "description": "Create the Contact page that displays placeholder address/phone/email plus renders the inquiry form component."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire all newly created pages into the router and ensure header navigation points to each route without full page reload."
+        },
+        {
+          "path": "frontend/src/components/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Wire navigation links to Home, About, Products, Manufacturing/Infrastructure, Quality/Standards, and Contact; include an accessible active-state pattern."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add a validated contact/inquiry form that submits to the Motoko backend and shows success/error feedback.",
+      "acceptanceCriteria": [
+        "Contact form includes: name, company (optional), email, phone (optional), message",
+        "Client-side validation prevents empty name/email/message and shows readable error messages",
+        "On submit, an inquiry record is persisted in the backend and the UI shows a success state"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/InquiryForm.tsx",
+          "operation": "create",
+          "description": "Implement the inquiry form UI (name, company optional, email, phone optional, message) with basic client-side validation and clear inline error messages; show success/error states after submission."
+        },
+        {
+          "path": "frontend/src/hooks/useSubmitInquiry.ts",
+          "operation": "create",
+          "description": "Create a small hook that uses useActor() to call the backend submitInquiry(email, subject, message); compose subject/message to include name/company/phone while keeping required backend parameters."
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Render the InquiryForm on the Contact page and display a clear post-submit success message; ensure content remains fully public (no login)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply an industrial visual theme (steel/graphite neutrals + single non-blue/purple accent) with consistent Tailwind styling and strong typography.",
+      "acceptanceCriteria": [
+        "A single, consistent theme (colors, typography, spacing, button styles) is used across all pages",
+        "Home page includes a hero section, key highlights (e.g., product range/quality/lead time placeholders), and a clear call-to-action leading to Contact",
+        "No blue/purple is used as the primary theme unless explicitly required by later user input"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define Tailwind base/components/utilities and set global CSS variables for a steel/graphite neutral palette with a single accent color (e.g., orange/amber), plus base typography defaults (English-only)."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust theme extension as needed to align with the industrial palette via existing CSS variables; ensure the accent/primary is not blue/purple."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Implement the hero section, highlights (product range/quality/lead time placeholders), and a prominent CTA button/link to Contact using consistent Tailwind styles."
+        },
+        {
+          "path": "frontend/src/components/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Apply consistent Tailwind styling for navigation (typography, spacing, focus states) matching the industrial theme."
+        },
+        {
+          "path": "frontend/src/components/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Apply consistent Tailwind styling for footer layout and typography matching the industrial theme."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add generated static brand and homepage imagery under frontend/public/assets/generated and render them in the UI (logo + homepage visuals).",
+      "acceptanceCriteria": [
+        "Generated images are committed under frontend/public/assets/generated",
+        "Header uses the generated logo asset",
+        "Home page uses the generated hero image and at least one additional generated visual element"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/gkmi-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated logo asset at the exact path frontend/public/assets/generated/gkmi-logo.dim_512x512.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/hero-fasteners.dim_1920x800.png",
+          "operation": "create",
+          "description": "Add the generated homepage hero image at the exact path frontend/public/assets/generated/hero-fasteners.dim_1920x800.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/icons-fasteners-set.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated line icon set image at the exact path frontend/public/assets/generated/icons-fasteners-set.dim_512x512.png."
+        },
+        {
+          "path": "frontend/src/components/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Render the generated logo from frontend/public/assets/generated/gkmi-logo.dim_512x512.png in the header (with alt text and proper sizing)."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Render the hero image from frontend/public/assets/generated/hero-fasteners.dim_1920x800.png in the Home hero section and use frontend/public/assets/generated/icons-fasteners-set.dim_512x512.png as a visual element for homepage highlights (e.g., quality/manufacturing/delivery)."
+        }
+      ]
+    }
+  ]
+}
